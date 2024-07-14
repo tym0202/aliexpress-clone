@@ -68,6 +68,41 @@
             <NuxtLink to="/" class="min-w-[170px]">
                 <img width="170" src="/AliExpress-logo.png"/>
             </NuxtLink>
+            
+            <!-- BATAS INPUT -->
+           <div class="max-w-[700px] w-full md:block hidden">
+            <div class="relative">
+                <div class="flex items-center border-2 border-[#FF4646] rounded-md w-full">
+                    <input class="
+                        w-full
+                         placeholder-gray-400 
+                         text-sm 
+                         pl-3 focus:outline-none"
+                        placeholder="kitchen-accessoris" 
+                        type="text" v-model="searchItem">
+                        <Icon v-if="isSearching" name="eos-icons:loading" size="25" class="mr-2"/>
+                        <button class="flex items-center h-[100%] p-1.5 px-2 bg-[#FF4646]">
+                            <Icon name="ph-magnifying-glass" size="20" color="#ffffff"/>
+                        </button>
+                </div>
+
+                <div class="absolute bg-white max-w-[700px] h-auto w-full">
+                    <div class="p-1">
+                        <NuxtLink to="⁠ /item/1 ⁠" class="flex items-center justify-between w-full cursor-pointer
+                        hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <img class="rounded-md" width="40" src="https://picsum.photos/id/82/300/300"/> 
+                            <div class="truncate ml-2">TESTING</div>
+                        </div>
+                        <div class="truncate">$ 89.99</div>
+                        </NuxtLink>
+                    </div>
+                </div>
+
+            </div>
+           </div>
+           <!-- BATAS INPUT -->
+
         </div>
         </div>
     </div>
@@ -75,6 +110,8 @@
 
 <script setup>
 let isAccountMenu = ref(false)
+let isSearching = ref(true)
+let searchItem = ref('')
 </script>
 
 <style lang="scss" scoped>
