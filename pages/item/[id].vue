@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Mainlayout>
+        <MainLayout>
             <div id="ItemPage" class="mt-4 max-w-[1200px] mx-auto px-2">
                 <div class="md:flex gap-4 justify-between mx-auto w-full">
                     <div class="md:w-[40%]">
@@ -23,11 +23,12 @@
                     </div>
                 </div>
             </div>
-        </Mainlayout>
+        </MainLayout>
     </div>
 </template>
 
 <script setup>
+
 import MainLayout from '~/layouts/MainLayout.vue';
 
 onMounted(() => {
