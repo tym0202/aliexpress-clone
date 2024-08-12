@@ -21,6 +21,31 @@
                             </div>
                         </div>
                     </div>
+                    <div class="md:w-[60%] bg-white p-3 rounded-lg">
+                        <div class="md:w-[60%] bg-white p-3 rounded-lg">
+                            <p class="mb-2">Title</p>
+                            <p class="font-light text-[12px] mb-2">Description Section</p>
+                        </div>
+                        <div class="flex items-center pt-1.5">
+                            <span class="h-4 min-w-4 rounded-full p-0.5 bg-[#FFD000] mr-2">
+                                <Icon name="material-symbols:star-rounded" class="-mt-[17px]" size="12px"/>
+                            </span>
+                            <p class="text-[#FF5353]">Extra 5% off</p>
+                        </div>
+                        <div class="flex items-center justify-start my-2">
+                            <Icon name="ic:baseline-star" color="#FF5353"/>
+                            <Icon name="ic:baseline-star" color="#FF5353"/>
+                            <Icon name="ic:baseline-star" color="#FF5353"/>
+                            <Icon name="ic:baseline-star" color="#FF5353"/>
+                            <Icon name="ic:baseline-star" color="#FF5353"/>
+                            <span class="text-[13px] font-light ml-2">5 213 Reviews 1,000+ orders</span>
+                        </div>
+                        <div class="border-b" />
+                        <div class="flex items-center justify-start gap-2 my-2">
+                            <div class="text-xl font-bold">$ {{ priceComputed }}</div>
+                            <span class="bg-[F5F5F5] order text-[#C08562] text-[9px] font-semibold px-1.5 rounded-sm">70% off</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </MainLayout>
