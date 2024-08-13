@@ -45,6 +45,30 @@
                             <div class="text-xl font-bold">$ {{ priceComputed }}</div>
                             <span class="bg-[F5F5F5] order text-[#C08562] text-[9px] font-semibold px-1.5 rounded-sm">70% off</span>
                         </div>
+                        <p class="text-[#009S66] text-xs">
+                            Free 11-day delivery over $8.38
+                        </p>
+                        <p class="text-[#009S66] text-xs">
+                            Free Shipping
+                        </p>
+                        <div class="py-2"/>
+                            <button
+                            @click="addToCart()"
+                            :disabled="isInCart"
+                            class="
+                            px-6
+                            py-2
+                            rounded-lg
+                            text-white
+                            text-lg
+                            font-semibold
+                            bg-gradient-to-r
+                            from-[#FF851A]
+                            to-[#FFAC2C]">
+                            <div v-if="isInCart">Is Added</div>
+                            <div v-else>Add to Cart</div>
+                            </button>
+                        <!-- ======================= -->
                     </div>
                 </div>
             </div>
@@ -55,11 +79,32 @@
 <script setup>
 
 import MainLayout from '~/layouts/MainLayout.vue';
+import { useUserStore } from '~/stores/user';
+const userStore = useUserStore()
+
+const route = useRoute()
+
+let currentImage = ref(null)
 
 onMounted(() => {
     watchEffect (() => {
+    currentImage.value = 'https://picsum.photos/id/77/800/800'
     images.value[0] = 'https://picsum.photos/id/67/800/800'
 })
+})
+
+const isInCart = computed (()=>{
+    let res = false
+    userStore.cart.forEach(prod=>{
+        if (route.params.id == prod.id) {
+            res = true
+        }
+    })
+    return res
+})
+
+const priceComputed = computed(()=>{
+    return '26.40'
 })
 
 const images = ref([
@@ -70,6 +115,11 @@ const images = ref([
     'https://picsum.photos/id/99/800/800',
     'https://picsum.photos/id/144/800/800',
 ])
+
+const addToCart = () => {
+    alert('ADDED')
+}
+
 </script>
 
 <style lang="scss" scoped>
